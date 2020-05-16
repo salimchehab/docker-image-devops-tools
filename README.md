@@ -23,9 +23,9 @@ $ bash -x run.sh
 ...
 Successfully tagged devops-tools:1.0.0
 + verify_versions
-+ sudo docker run -i devops-tools:1.0.0 terraform -v
++ sudo docker run -i devops-tools:1.0.0 terraform --version
 Terraform v0.12.25
-+ sudo docker run -i devops-tools:1.0.0 vault -v
++ sudo docker run -i devops-tools:1.0.0 vault --version
 Vault v1.4.1
 + sudo docker run -i devops-tools:1.0.0 aws --version
 aws-cli/1.18.40 Python/3.7.5 Linux/4.19.76-linuxkit botocore/1.15.40
@@ -34,7 +34,7 @@ Python 3.7.5
 + sudo docker run -i devops-tools:1.0.0 salt --version
 salt 2019.2.4 (Fluorine)
 + sudo docker run -i devops-tools:1.0.0 ansible --version
-ansible 2.9.1
+ansible 2.9.2
   config file = None
   configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
   ansible python module location = /usr/lib/python3.7/site-packages/ansible

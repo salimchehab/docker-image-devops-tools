@@ -10,8 +10,8 @@ function build() {
 }
 
 function verify_versions() {
-    sudo docker run -i ${CONTAINER_IMAGE}:${TAG} terraform -v
-    sudo docker run -i ${CONTAINER_IMAGE}:${TAG} vault -v
+    sudo docker run -i ${CONTAINER_IMAGE}:${TAG} terraform --version
+    sudo docker run -i ${CONTAINER_IMAGE}:${TAG} vault --version
     sudo docker run -i ${CONTAINER_IMAGE}:${TAG} aws --version
     sudo docker run -i ${CONTAINER_IMAGE}:${TAG} python3.7 --version
     sudo docker run -i ${CONTAINER_IMAGE}:${TAG} salt --version

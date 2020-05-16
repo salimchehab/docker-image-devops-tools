@@ -40,6 +40,8 @@ ansible 2.9.2
   ansible python module location = /usr/lib/python3.7/site-packages/ansible
   executable location = /usr/bin/ansible
   python version = 3.7.5 (default, Oct 17 2019, 12:25:15) [GCC 8.3.0]
++ sudo docker run -i devops-tools:1.0.0 go version
+go version go1.12.12 linux/amd64
 ```
 
 Docker images:

@@ -23,7 +23,8 @@ RUN apk update && \
   unzip \
   curl \
   jq \
-  ca-certificates
+  ca-certificates \
+  go
 
 # install python3 and upgrade pip3
 RUN apk add --no-cache --virtual .build-deps g++ python3-dev libffi-dev openssl-dev && \
@@ -63,4 +64,4 @@ RUN wget --quiet --directory-prefix="/tmp" "${VAULT_DOWNLOAD_LINK}" && \
   rm "/tmp/${VAULT_ZIP_FILE}"
 
 # uncomment for testing
-# ENTRYPOINT ["/bin/sh"]
+#ENTRYPOINT ["/bin/sh"]

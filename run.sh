@@ -2,7 +2,7 @@
 
 set -e
 
-readonly CONTAINER_IMAGE=devops-tools
+readonly CONTAINER_IMAGE="devops-tools"
 readonly TAG="1.0.0"
 declare -ra bins=(
   "terraform"
@@ -21,6 +21,7 @@ function verify_versions() {
   for bin in "${bins[@]}"; do
     sudo docker run -i ${CONTAINER_IMAGE}:${TAG} "${bin}" --version
   done
+  sudo docker run -i ${CONTAINER_IMAGE}:${TAG} go version
 }
 
 function main() {

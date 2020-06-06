@@ -10,7 +10,7 @@ are deleted after the pip packages are installed (`apk del .build-deps`). The fo
 - aws-cli version 1.18.40
 - Python 3.7.5
 - Salt 2019.2.4 (Fluorine)
-- Ansible 2.9.1
+- Ansible 2.9.2
 - go version go1.12.12 linux/amd64
 
 These are the tools that I am currently using and this list is not intended to be a comprehensive list of all available tools.

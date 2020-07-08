@@ -22,6 +22,7 @@ function verify_versions() {
     sudo docker run -i ${CONTAINER_IMAGE}:${TAG} "${bin}" --version
   done
   sudo docker run -i ${CONTAINER_IMAGE}:${TAG} go version
+  sudo docker run -i ${CONTAINER_IMAGE}:${TAG} kubectl version --client
 }
 
 function main() {

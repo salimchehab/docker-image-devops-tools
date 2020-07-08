@@ -4,6 +4,7 @@ ARG TERRAFORM_VERSION="0.12.25"
 ARG TERRAFORM_AWS_PROVIDER_VERSION="2.62.0"
 ARG VAULT_VERSION="1.4.1"
 ARG SALT_VERSION="2019.2.4-r0"
+ARG KUBECTL_VERSION="1.18.0"
 # download links and zip file names
 ENV TERRAFORM_ZIP_FILE="terraform_${TERRAFORM_VERSION}_linux_amd64.zip"
 ENV TERRAFORM_DOWNLOAD_LINK="https://releases.hashicorp.com/terraform/$TERRAFORM_VERSION/$TERRAFORM_ZIP_FILE"
@@ -46,6 +47,11 @@ RUN apk add salt-master="${SALT_VERSION}" \
   salt-ssh="${SALT_VERSION}" \
   salt-cloud="${SALT_VERSION}" \
   salt-syndic="${SALT_VERSION}"
+
+# kubectl
+RUN curl -LO "https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl" && \
+  chmod +x ./kubectl && \
+  mv ./kubectl /usr/local/bin/kubectl
 
 # get and mv terraform bin to /usr/local/bin
 RUN wget --quiet --directory-prefix="/tmp" "${TERRAFORM_DOWNLOAD_LINK}" && \
